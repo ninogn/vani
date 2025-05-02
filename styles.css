@@ -1,0 +1,52 @@
+/* Paleta de Cores */
+:root {
+    --purple-dark: #4A2C6D;
+    --lilac: #D8BFD8;
+    --gold: #D4AF37;
+    --white: #FFFFFF;
+    --black: #1C2526;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, var(--lilac) 0%, var(--white) 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--black);
+}
+
+.text-purple-dark { color: var(--purple-dark); }
+.text-lilac { color: var(--lilac); }
+
+.btn-purple-dark {
+    background-color: var(--purple-dark);
+    border-color: var(--purple-dark);
+    color: var(--white);
+}
+.btn-purple-dark:hover {
+    background-color: #3A1C5D;
+    border-color: #3A1C5D;
+}
+
+.btn-gold {
+    background-color: var(--gold);
+    border-color: var(--gold);
+    color: var(--black);
+}
+.btn-gold:hover {
+    background-color: #C49A2A;
+    border-color: #C49A2A;
+}
+
+.btn-lg {
+    transition: transform 0.3s ease;
+}
+.btn-lg:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .btn-lg { width: 100%; }
+}
