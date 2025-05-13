@@ -46,15 +46,6 @@ html, body {
     transform: translateY(-1px);
 }
 
-.btn-outline-lilac {
-    border-color: var(--lilac);
-    color: var(--lilac);
-}
-.btn-outline-lilac:hover {
-    background-color: var(--lilac);
-    color: var(--purple-dark);
-}
-
 .text-success:hover { color: #2c6b2f; }
 .text-pink-600:hover { color: #9d174d; }
 .text-warning:hover { color: #b37400; }
@@ -87,28 +78,4 @@ html, body {
 .contribua-title {
     font-weight: 600;
     font-size: 1.25rem;
-}
-
-.slider-labels {
-    font-size: 0.85rem;
-    margin-top: 5px;
-}
-
-/* Tooltip Styling */
-[title] {
-    position: relative;
-}
-[title]:hover:after {
-    content: attr(title);
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: var(--purple-dark);
-    color: var(--white);
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-size: 0.75rem;
-    white-space: nowrap;
-    z-index: 10;
 }
