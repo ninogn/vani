@@ -20,7 +20,8 @@ const translations = {
         whatsappButton: 'Enviar a Vani',
         modalTitle: 'Contribua',
         pixInstruction: 'Clique para copiar o código PIX',
-        lightningInstruction: 'Clique para copiar o código Lightning'
+        lightningInstruction: 'Clique para copiar o código Lightning',
+        forestMedicineLink: 'As medicinas da floresta são para você? Descubra!'
     },
     en: {
         profileTitle: 'Sacerdotisa Vani D\'Oyá',
@@ -39,7 +40,8 @@ const translations = {
         whatsappButton: 'Send to Vani',
         modalTitle: 'Contribute',
         pixInstruction: 'Click to copy the PIX code',
-        lightningInstruction: 'Click to copy the Lightning code'
+        lightningInstruction: 'Click to copy the Lightning code',
+        forestMedicineLink: 'Are forest medicines right for you? Find out!'
     },
     es: {
         profileTitle: 'Sacerdotisa Vani D\'Oyá',
@@ -58,7 +60,8 @@ const translations = {
         whatsappButton: 'Enviar a Vani',
         modalTitle: 'Contribuir',
         pixInstruction: 'Toca para copiar el código PIX',
-        lightningInstruction: 'Toca para copiar el código Lightning'
+        lightningInstruction: 'Toca para copiar el código Lightning',
+        forestMedicineLink: '¿Son las medicinas de la selva para ti? ¡Descúbrelo!'
     }
 };
 
@@ -133,6 +136,11 @@ function updateContent() {
     document.getElementById('modal-title').textContent = langData.modalTitle;
     document.getElementById('pix-instruction').textContent = langData.pixInstruction;
     document.getElementById('lightning-instruction').textContent = langData.lightningInstruction;
+    document.getElementById('forest-medicine-link').title = langData.forestMedicineLink;
+    document.getElementById('forest-medicine-link').setAttribute('data-bs-toggle', 'tooltip');
+    document.getElementById('forest-medicine-link').setAttribute('data-bs-placement', 'bottom');
+    document.getElementById('forest-medicine-link').setAttribute('data-bs-custom-class', 'custom-tooltip');
+    document.getElementById('forest-medicine-link').setAttribute('data-bs-html', 'true');
 }
 
 // Função de cópia para a área de transferência
@@ -219,4 +227,10 @@ function shareSite() {
 }
 
 // Inicialização
-document.addEventListener('DOMContentLoaded', detectLanguage);
+document.addEventListener('DOMContentLoaded', () => {
+    detectLanguage();
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl);
+    });
+});
