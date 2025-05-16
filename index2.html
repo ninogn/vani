@@ -10,18 +10,11 @@
     <link rel="icon" href="favicon.ico?v=3">
 </head>
 <body class="bg-gradient">
-    <div class="container text-center py-5 position-relative">
-        <!-- Language Selector -->
-        <div class="position-absolute top-0 end-0 p-2">
-            <span class="me-2" onclick="setLanguage('pt')"><img src="https://flagcdn.com/16x12/br.png" alt="Português" title="Português" style="cursor: pointer;"></span>
-            <span class="me-2" onclick="setLanguage('en')"><img src="https://flagcdn.com/16x12/us.png" alt="English" title="English" style="cursor: pointer;"></span>
-            <span onclick="setLanguage('es')"><img src="https://flagcdn.com/16x12/es.png" alt="Español" title="Español" style="cursor: pointer;"></span>
-        </div>
-
+    <div class="container text-center py-5">
         <!-- Profile Section -->
         <img src="foto-vanidoya.jpeg" alt="Foto de @sacerdotisa_vanidoya" class="rounded-circle img-fluid mb-4" style="max-width: 150px; height: auto;">
-        <h1 class="display-5 fw-bold text-purple-dark" id="profile-title">Sacerdotisa Vani D'Oyá</h1>
-        <p class="lead mb-4 text-lilac" id="profile-subtitle">Guia Espiritual | Conexão e Transformação</p>
+        <h1 class="display-5 fw-bold text-purple-dark">Sacerdotisa Vani D'Oyá</h1>
+        <p class="lead mb-4 text-lilac">Guia Espiritual | Conexão e Transformação</p>
 
         <!-- Social Media and Payment Icons -->
         <div class="d-flex justify-content-center gap-3 mb-4">
@@ -32,20 +25,16 @@
         </div>
 
         <!-- Button to Show Pronto Socorro Espiritual -->
-        <button class="btn-spiritual mb-4" onclick="showSpiritualEmergency()" id="spiritual-emergency-button">Pronto Socorro Espiritual</button>
+        <button class="btn-spiritual mb-4" onclick="showSpiritualEmergency()">Pronto Socorro Espiritual</button>
 
         <!-- Pronto Socorro Espiritual (Hidden Initially) -->
         <div id="spiritual-emergency" class="bg-white p-4 rounded shadow mb-4 mx-auto d-none" style="max-width: 500px;">
-            <h2 class="h4 fw-bold text-purple-dark mb-3" id="emergency-title">Pronto Socorro Espiritual</h2>
-            <p class="text-muted mb-2" id="emergency-subtitle">Como você está agora?</p>
-            <input type="range" class="form-range" min="0" max="100" value="50" id="mood-slider" oninput="updateMoodState()">
-            <div class="d-flex justify-content-between text-muted small slider-labels">
-                <span id="slider-desequilibrio">Desequilíbrio</span>
-                <span id="slider-paz">Paz</span>
-            </div>
-            <p class="text-muted small mt-2" id="mood-state">Neutro</p>
-            <textarea class="form-control mt-3" rows="4" id="message-input"></textarea>
-            <button class="btn btn-purple-dark mt-3" onclick="sendToWhatsApp()" id="whatsapp-button">Enviar para Vani</button>
+            <h2 class="h4 fw-bold text-purple-dark mb-3">Pronto Socorro Espiritual</h2>
+            <p class="text-muted mb-2">Como você está agora?</p>
+            <input type="range" class="form-range" min="0" max="100" value="50" id="mood-slider">
+            <div class="d-flex justify-content-between text-muted small slider-labels"><span>Desequilíbrio</span><span>Paz</span></div>
+            <textarea class="form-control mt-3" rows="4" placeholder="Escreva algo sobre como você está se sentindo..." id="message-input"></textarea>
+            <button class="btn btn-purple-dark mt-3" onclick="sendToWhatsApp()">Enviar para Vani</button>
         </div>
 
         <!-- Discreet Contact Link -->
@@ -61,21 +50,21 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body text-center">
-                        <h5 class="contribua-title text-purple-dark mb-4" id="modal-title">Contribua:</h5>
+                        <h5 class="contribua-title text-purple-dark mb-4">Contribua:</h5>
                         <div class="d-flex justify-content-center gap-4">
                             <div>
                                 <a href="#" onclick="copyToClipboard(PIX_CODE)" class="d-block cursor-pointer">
                                     <img src="pix-qrcode.png" alt="PIX QR Code" class="img-fluid" style="max-width: 150px; height: auto;">
                                 </a>
                                 <img src="pix-logo.png" alt="PIX Logo" class="img-fluid mt-2" style="max-width: 60px; height: auto;">
-                                <p class="small text-muted mt-1" id="pix-instruction">Clique para copiar o código PIX</p>
+                                <p class="small text-muted mt-1">Clique no QR Code para copiar o PIX</p>
                             </div>
                             <div>
                                 <a href="#" onclick="copyToClipboard(LIGHTNING_CODE)" class="d-block cursor-pointer">
                                     <img src="lb-qrcode.jpeg" alt="Lightning QR Code" class="img-fluid" style="max-width: 150px; height: auto;">
                                 </a>
-                                <span class="lightning-symbol mt-2 d-block" style="font-size: 36px; line-height: 36px;">⚡</span>
-                                <p class="small text-muted mt-1" id="lightning-instruction">Clique para copiar o código Lightning</p>
+                                <span class="lightning-symbol mt-2 d-block" style="font-size: 60px; line-height: 60px;">⚡</span>
+                                <p class="small text-muted mt-1">Clique no QR Code para copiar o Lightning</p>
                             </div>
                         </div>
                     </div>

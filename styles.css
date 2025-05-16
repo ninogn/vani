@@ -123,3 +123,12 @@ div[style*="position: fixed; bottom: 20px;"] {
 .modal-body .d-flex div p {
     margin-top: 10px;
 }
+.position-absolute img {
+    width: 16px;
+    height: 12px;
+    margin-left: 5px;
+    transition: transform 0.2s;
+}
+.position-absolute img:hover {
+    transform: scale(1.2);
+}
