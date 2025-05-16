@@ -18,7 +18,8 @@
 
         <!-- Social Media and Payment Icons -->
         <div class="d-flex justify-content-center gap-3 mb-4">
-<a href="https://wa.me/5521972280397?text=Oi!%20Tudo%20bem?%20Quero%20conversar%20sobre" target="_blank" class="text-success" title="WhatsApp"><i class="fab fa-whatsapp fa-2x"></i></a>            <a href="https://instagram.com/sacerdotisa_vanidoya" target="_blank" class="text-pink-600" title="Instagram"><i class="fab fa-instagram fa-2x"></i></a>
+            <a href="https://wa.me/5521972280397?text=Oi!%20Tudo%20bem?%20Quero%20conversar%20sobre" target="_blank" class="text-success" title="WhatsApp"><i class="fab fa-whatsapp fa-2x"></i></a>
+            <a href="https://instagram.com/sacerdotisa_vanidoya" target="_blank" class="text-pink-600" title="Instagram"><i class="fab fa-instagram fa-2x"></i></a>
             <a href="#" data-bs-toggle="modal" data-bs-target="#paymentModal" class="text-warning" title="Contribuir"><i class="fas fa-qrcode fa-2x cursor-pointer"></i></a>
             <a href="#" onclick="shareSite()" class="btn btn-sm btn-outline-lilac small" title="Compartilhar"><i class="fas fa-share-alt"></i></a>
         </div>
@@ -52,15 +53,18 @@
                         <h5 class="contribua-title text-purple-dark mb-4">Contribua:</h5>
                         <div class="d-flex justify-content-center gap-4">
                             <div>
-                                <a href="#" onclick="copyToClipboard('00020101021126330014br.gov.bcb.pix0111126445857675204000053039865802BR5919Vanise Pinto Telles6014Rio De Janeiro62070503***630431D6')" class="d-block cursor-pointer">
+                                <a href="#" onclick="copyToClipboard(PIX_CODE)" class="d-block cursor-pointer">
                                     <img src="pix-qrcode.png" alt="PIX QR Code" class="img-fluid" style="max-width: 150px; height: auto;">
                                 </a>
                                 <img src="pix-logo.png" alt="PIX Logo" class="img-fluid mt-2" style="max-width: 60px; height: auto;">
-                                <p class="small text-muted mt-1">Copiar PIX</p>
+                                <p class="small text-muted mt-1">Clique no QR Code para copiar o PIX</p>
                             </div>
                             <div>
-                                <span class="lightning-symbol">⚡</span>
-                                <p class="small text-muted mt-1">Em breve lightning!</p>
+                                <a href="#" onclick="copyToClipboard(LIGHTNING_CODE)" class="d-block cursor-pointer">
+                                    <img src="lb-qrcode.jpeg" alt="Lightning QR Code" class="img-fluid" style="max-width: 150px; height: auto;">
+                                </a>
+                                <span class="lightning-symbol mt-2 d-block" style="font-size: 60px; line-height: 60px;">⚡</span>
+                                <p class="small text-muted mt-1">Clique no QR Code para copiar o Lightning</p>
                             </div>
                         </div>
                     </div>
