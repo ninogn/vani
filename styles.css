@@ -1,90 +1,54 @@
-/* Garantir fundo branco com padrão de geometria sagrada */
-body.bg-white {
-    background-color: #FFFFFF !important;
-    background-image: 
-        radial-gradient(circle, #87CEEB 1px, transparent 1px),
-        radial-gradient(circle at 20px 20px, #D4AF37 1px, transparent 1px);
-    background-size: 40px 40px;
+/* styles.css */
+
+body {
+  font-family: 'Comfortaa', cursive;
+  background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, #e0f7fa 100%);
+  background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+  background-repeat: repeat;
+  color: #333;
 }
 
-/* Estilizar botões e links */
-.btn-light-blue {
-    background-color: #87CEEB;
-    border-color: #87CEEB;
-    color: #fff;
-    padding: 10px 20px;
-    font-size: 16px;
-    transition: transform 0.3s ease;
+.brand-color {
+  color: #87CEEB;
 }
 
-.btn-light-blue:hover {
-    background-color: #72bcd4;
-    border-color: #72bcd4;
-    transform: scale(1.1);
+.gold {
+  color: #D4AF37;
 }
 
-.btn-outline-light-blue {
-    color: #87CEEB;
-    border-color: #87CEEB;
-    transition: transform 0.3s ease;
+.btn-vanidoya {
+  background-color: #87CEEB;
+  border: none;
+  color: white;
+  font-weight: bold;
+  transition: all 0.3s ease;
 }
 
-.btn-outline-light-blue:hover {
-    color: #fff;
-    background-color: #87CEEB;
-    border-color: #87CEEB;
-    transform: scale(1.1);
+.btn-vanidoya:hover {
+  background-color: #6bbad0;
+  box-shadow: 0 0 10px #87CEEB;
 }
 
-/* Estilizar ícones de navegação */
-.d-flex a, #forest-medicine-link, #share-button {
-    transition: transform 0.3s ease;
+.icon-btn {
+  color: #D4AF37;
+  transition: transform 0.3s;
 }
 
-.d-flex a:hover, #forest-medicine-link:hover, #share-button:hover {
-    transform: scale(1.1);
+.icon-btn:hover {
+  transform: scale(1.2);
 }
 
-/* Estilizar tooltips */
-.custom-tooltip .tooltip-inner {
-    background-color: #87CEEB;
-    color: #fff;
+.modal-header, .modal-footer {
+  border: none;
 }
 
-/* Ajustar ícones de bandeiras */
+textarea::placeholder {
+  color: #aaa;
+}
+
 .position-absolute img {
-    width: 16px;
-    height: 12px;
-    margin-left: 5px;
-    transition: transform 0.3s ease;
+  width: 24px;
+  height: 18px;
+  margin-left: 6px;
 }
 
-.position-absolute img:hover {
-    transform: scale(1.2);
-}
-
-/* Garantir bordas e sombras consistentes */
-.rounded-circle {
-    border: 3px solid #87CEEB !important;
-}
-
-.shadow {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
-}
-
-/* Estilizar cores dos ícones */
-.text-light-blue {
-    color: #87CEEB;
-}
-
-.text-gold {
-    color: #D4AF37;
-}
-
-.text-green-600 {
-    color: #2f855a;
-}
-
-/* Garantir responsividade */
-@media (max-width: 576px) {
-    .d-flex
