@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seleção de Kits - Feitio</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+      padding: 40px 20px;
+      max-width: 700px;
+      margin: auto;
+      min-height: 100vh;
+    }
+    .container {
+      background: white;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      font-size: 2em;
+      color: #2c3e50;
+      text-align: center;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+    .subtitle {
+      font-size: 1.1em;
+      color: #7f8c8d;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .form-label {
+      font-weight: 500;
+      color: #34495e;
+    }
+    select, input {
+      border: 2px solid #dcdcdc;
+      border-radius: 8px;
+      padding: 12px;
+      font-size: 1em;
+      transition: border-color 0.3s ease;
+    }
+    select:focus, input:focus {
+      border-color: #3498db;
+      box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+      outline: none;
+    }
+    .btn-primary {
+      background-color: #3498db;
+      border: none;
+      padding: 12px;
+      font-size: 1.1em;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+    }
+    .btn-primary:hover {
+      background-color: #2980b9;
+    }
+    .message {
+      font-weight: 600;
+      text-align: center;
+      margin-top: 20px;
+      padding: 10px;
+      border-radius: 5px;
+    }
+    .success {
+      color: #27ae60;
+      background: #e8f8f5;
+    }
+    .error {
+      color: #c0392b;
+      background: #fce4e4;
+    }
+    .kit-option:disabled {
+      color: #bdc3c7;
+      background: #ecf0f1;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Seleção de Kits - Feitio</h1>
+    <p class="subtitle">Escolha um kit de alimentos abaixo (máximo de 2 pessoas por kit). Insira seu nome e os dias que estará presente no Feitio. Não se esqueça de trazer lanches ou itens de café da manhã para o dia da sua chegada!</p>
+    
+    <form id="selectionForm">
+      <div class="mb-4">
+        <label for="kitSelect" class="form-label">Escolha um kit de alimentos</label>
+        <select id="kitSelect" class="form-select">
+          <option value="">Selecione um kit</option>
+          <option value="1">Kit 1: Frutas variadas (banana, maçã, laranja), 2kg de feijão carioquinha, 2kg de arroz agulhinha, 2kg de macarrão espaguete, 6 pacotes de biscoito maizena, 500g de goiabada cascão, 2 litros de leite integral</option>
+          <option value="2">Kit 2: Frutas variadas (abacaxi, melancia, uva), 2kg de ervilha seca, 4kg de aipim fresco, 1kg de inhame, 2kg de macarrão parafuso, 2kg de arroz branco, 500g de alho, 3 litros de leite integral</option>
+          <option value="3">Kit 3: Frutas variadas (pera, manga, kiwi), 2kg de lentilha, 2kg de batata doce, 2kg de macarrão sem glúten (penne), 500g de alho, 4 pacotes de biscoitos doces, 2 litros de leite desnatado</option>
+          <option value="4">Kit 4: 3 pacotes de tapioca granulada (500g cada), 500g de queijo coalho, 2 pacotes de manteiga com sal (500g cada), 3 sacos de pão de forma, 1kg de achocolatado em pó</option>
+          <option value="5">Kit 5: Frutas variadas (morango, abacate, limão), 30 ovos caipira, 1kg de café moído, 500g de manteiga com sal, 1kg de açúcar cristal, 500g de alho</option>
+          <option value="6">Kit 6: Legumes variados (cenoura, abobrinha, chuchu), 24 ovos brancos, 2kg de feijão vermelho, 2kg de arroz integral, 3kg de batata calabresa, 1 litro de suco de maracujá concentrado para diluir</option>
+          <option value="7">Kit 7: Legumes variados (beterraba, brócolis, couve-flor), 6 pacotes de pão de forma integral, 3 potes de requeijão cremoso (220g cada), 2kg de açúcar cristal, 500g de café em pó, 500g de queijo mussarela, 24 ovos</option>
+          <option value="8">Kit 8: Legumes variados (tomate, pimentão, abóbora), 2kg de farinha de trigo integral, 36 ovos, 1 pacote grande de fermento em pó (100g), 4 pacotes de biscoito doce, 1 litro de guaraná concentrado para diluir</option>
+          <option value="9">Kit 9: Legumes variados (cebola, alho-poró, espinafre), 2 pacotes de queijo parmesão ralado (100g cada), 2kg de fubá mimoso, 1kg de cebola roxa, 1kg de tomate italiano, 500g de manteiga sem sal, orégano, manjericão, chimichurri, 1kg de sal refinado</option>
+          <option value="10">Kit 10: Legumes variados (berinjela, rodelas de quiabo, vagem), 4 pacotes de pão massa fina, 500g de manteiga com sal, 6 sachês de molho de tomate (340g cada), 2kg de farinha de trigo branca</option>
+          <option value="11">Kit 11: Frutas variadas (tangerina, caju, goiaba), 3 pacotes de erva-mate torrada (250g cada), 3 pacotes de biscoito maizena, 6 pacotes de cream cracker</option>
+          <option value="12">Kit 12: 24 ovos caipira, 2kg de amendoim torrado, ervas verdes frescas (alecrim, hortelã, louro, manjericão), 1kg de cebola branca, 8 pacotes de biscoito salgado (livre escolha), abóbora moranga, berinjela, beterraba</option>
+          <option value="13">Kit 13: 8 abacates maduros, 10 cebolas roxas, 2kg de tomates maduros, 500ml de azeite extra virgem, 6 pacotes de torradas integrais, alface crespa, agrião fresco, 2kg de aipim</option>
+          <option value="14">Kit 14: 2kg de granolas variadas (castanha, frutas secas), mix de oleaginosas (castanha-do-pará, amêndoas), 1kg de aveia em flocos, frutas frescas (banana, maçã), 500ml de azeite tipo único, sementes (linhaça, chia)</option>
+          <option value="15">Kit 15: 20 espigas de milho verde, 3 goiabadas cascão (300g cada), 1 pote de doce de leite (400g), 1 lata de leite condensado (395g), frutas variadas (laranja, melão), 1 saco de pão de forma, 500g de queijo minas</option>
+          <option value="16">Kit 16: Frutas variadas (uva, mamão, melancia), sementes variadas (girassol, abóbora), legumes frescos (cenoura, beterraba), verduras (rúcula, couve), 6 sachês de molho de tomate (340g cada), itens adicionais conforme disponibilidade</option>
+        </select>
+      </div>
+      <div class="mb-4">
+        <label for="nameInput" class="form-label">Seu nome completo</label>
+        <input type="text" id="nameInput" class="form-control" placeholder="Digite seu nome">
+      </div>
+      <div class="mb-4">
+        <label for="daysInput" class="form-label">Dias que estará presente (ex: 10, 11, 12)</label>
+        <input type="text" id="daysInput" class="form-control" placeholder="Digite os dias">
+      </div>
+      <button type="submit" class="btn btn-primary w-100">Confirmar Escolha</button>
+    </form>
+    
+    <p id="message" class="message"></p>
+  </div>
+
+  <script>
+    const selections = JSON.parse(localStorage.getItem('selections')) || {};
+
+    const form = document.getElementById('selectionForm');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const kit = document.getElementById('kitSelect').value;
+      const name = document.getElementById('nameInput').value;
+      const days = document.getElementById('daysInput').value;
+      const message = document.getElementById('message');
+
+      if (!kit || !name || !days) {
+        message.textContent = 'Por favor, preencha todos os campos corretamente!';
+        message.className = 'message error';
+        return;
+      }
+
+      if (!selections[kit]) selections[kit] = [];
+      if (selections[kit].length >= 2) {
+        message.textContent = 'Este kit já foi escolhido por 2 pessoas. Por favor, selecione outro kit!';
+        message.className = 'message error';
+        return;
+      }
+
+      selections[kit].push({ name, days });
+      localStorage.setItem('selections', JSON.stringify(selections));
+      message.textContent = `Escolha registrada com sucesso! Traga lanches ou itens de café da manhã para o dia que chegar.`;
+      message.className = 'message success';
+
+      updateOptions();
+      console.log('Seleções atuais:', selections); // Para o organizador verificar
+      clearForm();
+    });
+
+    function updateOptions() {
+      const options = document.getElementById('kitSelect').options;
+      for (let i = 1; i < options.length; i++) {
+        const kitValue = options[i].value;
+        if (selections[kitValue] && selections[kitValue].length >= 2) {
+          options[i].disabled = true;
+          options[i].classList.add('kit-option');
+        }
+      }
+    }
+
+    function clearForm() {
+      document.getElementById('nameInput').value = '';
+      document.getElementById('daysInput').value = '';
+      document.getElementById('kitSelect').selectedIndex = 0;
+    }
+
+    updateOptions();
+  </script>
+</body>
+</html>
