@@ -1,0 +1,98 @@
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                // Fallback
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pronto-Socorro Espiritual de Vani</title>
+  <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css">
+</head>
+<body class="bg-gray-100 font-sans">
+  <!-- Navigation -->
+  <nav class="bg-blue-200 p-4 sticky top-0">
+    <ul class="flex space-x-6 justify-center text-blue-800">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#sobre">Sobre Vani</a></li>
+      <li><a href="#servicos">Serviços</a></li>
+      <li><a href="#agendamento">Agendamento</a></li>
+      <li><a href="#blog">Blog</a></li>
+      <li><a href="#eventos">Eventos</a></li>
+      <li><a href="#loja">Loja</a></li>
+      <li><a href="#airbnb">Airbnb</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="bg-blue-100 py-20 text-center">
+    <img src="https://via.placeholder.com/1200x400?text=Praia+de+São+Conrado" alt="São Conrado" class="w-full h-64 object-cover">
+    <h1 class="text-4xl font-bold text-blue-800 mt-6">Pronto-Socorro Espiritual de Vani</h1>
+    <p class="text-lg text-gray-700 mt-2">Um refúgio terapêutico à beira-mar para corpo, mente e espírito.</p>
+    <a href="#agendamento" class="mt-6 inline-block bg-blue-500 text-white py-2 px-6 rounded">Agende Agora</a>
+  </section>
+
+  <!-- Key Services -->
+  <section class="py-12 px-6 max-w-5xl mx-auto">
+    <h2 class="text-2xl font-semibold text-blue-800 text-center">Nossos Serviços</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+      <div class="bg-white p-4 rounded shadow">
+        <h3 class="text-xl font-bold">Terapias Individuais</h3>
+        <p>Oráculos e medicinas da floresta (R$170–R$280).</p>
+        <a href="#agendamento" class="text-blue-500">Agendar</a>
+      </div>
+      <div class="bg-white p-4 rounded shadow">
+        <h3 class="text-xl font-bold">Eventos Semanais</h3>
+        <p>Círculos de meditação e palestras.</p>
+        <a href="#eventos" class="text-blue-500">Ver Calendário</a>
+      </div>
+      <div class="bg-white p-4 rounded shadow">
+        <h3 class="text-xl font-bold">Fitoterápicos</h3>
+        <p>Produtos artesanais (~R$50).</p>
+        <a href="#loja" class="text-blue-500">Comprar</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-blue-200 py-6 text-center text-gray-700">
+    <p>© 2025 Pronto-Socorro Espiritual de Vani. Todos os direitos reservados.</p>
+  </footer>
+</body>
+</html>
