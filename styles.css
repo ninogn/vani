@@ -2,7 +2,8 @@
 
 body {
   font-family: 'Comfortaa', cursive;
-  background-image: url('celestia-nuvem.png');
+  background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, #e0f7fa 100%);
+  background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
   background-repeat: repeat;
   color: #333;
 }
