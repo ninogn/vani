@@ -1,54 +1,54 @@
 /* styles.css */
 
+/* Fundo de corpo usando imagem fornecida */
 body {
-  font-family: 'Comfortaa', cursive;
-  background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, #e0f7fa 100%);
-  background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
-  background-repeat: repeat;
+  font-family: 'Cinzel Decorative', cursive; /* Fonte mística */
+  background: url('celestia-nuvem.png') no-repeat center center fixed;
+  background-size: cover;
   color: #333;
 }
 
+/* Cor principal de marca (títulos e destaques) */
 .brand-color {
-  color: #87CEEB;
+  color: #7a0475; /* roxo escuro místico */
 }
 
+/* Classe auxiliar (destaques dourados pálidos) */
 .gold {
-  color: #D4AF37;
+  color: #EEE8AA;
 }
 
+/* Botões principais estilizados com nova paleta */
 .btn-vanidoya {
-  background-color: #87CEEB;
+  background-color: #a00d46; /* vermelho escuro */
   border: none;
-  color: white;
+  color: #FFDAB9; /* texto em pêssego suave */
   font-weight: bold;
   transition: all 0.3s ease;
 }
-
 .btn-vanidoya:hover {
-  background-color: #6bbad0;
-  box-shadow: 0 0 10px #87CEEB;
+  background-color: #EB2B76; /* rosa vibrante no hover */
+  box-shadow: 0 0 10px #a00d46;
 }
 
+/* Ícones sociais em cor pêssego suave */
 .icon-btn {
-  color: #D4AF37;
+  color: #FFDAB9;
   transition: transform 0.3s;
 }
-
 .icon-btn:hover {
   transform: scale(1.2);
 }
 
+/* Manter estilos de modais e placeholders (sem mudança relevante) */
 .modal-header, .modal-footer {
   border: none;
 }
-
 textarea::placeholder {
   color: #aaa;
 }
-
 .position-absolute img {
   width: 24px;
   height: 18px;
   margin-left: 6px;
 }
-
