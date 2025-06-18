@@ -12,13 +12,28 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="container text-center py-5">
+    <div class="container text-center py-4">
     <img src="foto-vanidoya.jpg" alt="Vani D'Oyá" class="rounded-circle mb-3"
-         style="width: 140px; border: 3px solid #FFDAB9;">
+         style="width: 140px; border: 4px solid #FFDAB9;">
+         <div class="container text-center py-1 glass">
     <h1 class="brand-color">Sacerdotisa Vani D'Oyá</h1>
     <p class="lead">Guia Espiritual | Conexão e Transformação</p>
+</div>
 
-    <div class="mb-4">
+    <!-- Botão Pronto Socorro Espiritual -->
+  
+    <div class="d-flex flex-column align-items-center gap-1 py-1">
+
+    <!-- Novos botões adicionados abaixo -->
+    <a href="https://pset.simplybook.me/v2/" class="btn btn-vanidoya">
+    Marque sua visita
+  </a>
+    <a href="https://embaot333.kpages.online/passaporte-para-escola-de-magia-e-bruxaria-antiga-ordem-triplice-cc7195fe-7eb1-4b13-b337-3281687d5598"
+       class="btn btn-vanidoya">
+    Cursos
+  </a>
+<div class="container text-center py-1 glass">    
+<div class="mb-1">
       <!-- Ícones de redes sociais e ações (cor dos ícones definida no CSS) -->
       <a href="#" class="icon-btn" onclick="window.open('https://wa.me/5521972280397','_blank')">
         <i class="fab fa-whatsapp fa-2x"></i>
@@ -35,29 +50,7 @@
       <a href="#" data-bs-toggle="modal" data-bs-target="#paymentModal" class="icon-btn">
         <i class="fas fa-qrcode fa-2x ms-3"></i>
       </a>
-    </div>
-
-    <!-- Botão Pronto Socorro Espiritual -->
-    <button class="btn btn-vanidoya mb-4"
-            onclick="document.getElementById('emergency').classList.toggle('d-none')">
-      Pronto Socorro Espiritual
-    </button>
-
-    <!-- Novos botões adicionados abaixo -->
-    <a href="https://pset.simplybook.me/v2/" class="btn btn-vanidoya mb-2">Marque sua visita</a>
-    <a href="https://embaot333.kpages.online/passaporte-para-escola-de-magia-e-bruxaria-antiga-ordem-triplice-cc7195fe-7eb1-4b13-b337-3281687d5598"
-       class="btn btn-vanidoya mb-4">Cursos</a>
-
-    <!-- Conteúdo do Pronto Socorro Espiritual (sem alteração) -->
-    <div id="emergency" class="d-none mx-auto p-4 border rounded shadow-sm" style="max-width: 500px;">
-      <h4 class="brand-color">Como você está agora?</h4>
-      <input type="range" min="0" max="100" value="50" id="mood" class="form-range">
-      <p id="mood-state" class="text-muted">Neutro</p>
-      <textarea id="feeling" class="form-control" rows="4" placeholder="Compartilhe seus sentimentos"></textarea>
-      <button class="btn btn-vanidoya mt-3" onclick="enviarWhatsApp()">Enviar para Vani</button>
-    </div>
-  </div>
-
+    </div></div>
   <!-- Modal Compartilhar -->
   <div class="modal fade" id="shareModal" tabindex="-1">
     <div class="modal-dialog">

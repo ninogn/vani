@@ -5,12 +5,12 @@ body {
   font-family: 'Cinzel Decorative', cursive; /* Fonte mística */
   background: url('celestia-nuvem.png') no-repeat center center fixed;
   background-size: cover;
-  color: #333;
+  color: #d185a2;
 }
 
 /* Cor principal de marca (títulos e destaques) */
 .brand-color {
-  color: #7a0475; /* roxo escuro místico */
+  color: #FFDAB9; /* roxo escuro místico */
 }
 
 /* Classe auxiliar (destaques dourados pálidos) */
@@ -21,7 +21,7 @@ body {
 /* Botões principais estilizados com nova paleta */
 .btn-vanidoya {
   background-color: #a00d46; /* vermelho escuro */
-  border: none;
+  border: 2px solid #FFDAB9; /* borda pêssego suave */
   color: #FFDAB9; /* texto em pêssego suave */
   font-weight: bold;
   transition: all 0.3s ease;
@@ -30,6 +30,15 @@ body {
   background-color: #EB2B76; /* rosa vibrante no hover */
   box-shadow: 0 0 10px #a00d46;
 }
+
+.glass-wrapper, .container.glass {
+  background: rgba(255, 255, 255, 0.12);  /* branco translúcido */
+  border-radius: 20px;
+  backdrop-filter: blur(8px) saturate(160%);
+  padding: 3rem 2rem;
+  box-shadow: 0 0 12px rgba(0,0,0,.5);
+}
+
 
 /* Ícones sociais em cor pêssego suave */
 .icon-btn {
