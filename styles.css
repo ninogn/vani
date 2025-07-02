@@ -26,6 +26,11 @@ body {
   font-weight: bold;
   transition: all 0.3s ease;
 }
+.btn-service{
+  width: min(90vw, 340px);   /* nunca encosta na borda vertical */
+  padding: .85rem 1.25rem;   /* altura generosa */
+  font-size: 1.15rem;        /* legível em mobile */
+}
 .btn-vanidoya:hover {
   background-color: #EB2B76; /* rosa vibrante no hover */
   box-shadow: 0 0 10px #a00d46;

@@ -136,3 +136,13 @@ document.addEventListener("DOMContentLoaded", () => {
   setLanguage(currentLanguage);
 });
 
+const PAGSEGURO = {
+  feitio : "https://pag.ae/12345678",         // Feitio –  ex.: R$ 150
+  tarot  : "https://pag.ae/abcdef99"          // Tarot –  ex.: R$ 297
+};
+
+document.getElementById("btn-feitio")
+        .addEventListener("click", () => window.open(PAGSEGURO.feitio, "_blank"));
+
+document.getElementById("btn-tarot")
+        .addEventListener("click", () => window.open(PAGSEGURO.tarot, "_blank"));
