@@ -138,7 +138,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const PAGSEGURO = {
   feitio : "https://pag.ae/7_PwaScM3",         // Feitio –  ex.: R$ 150
-  tarot  : "https://pag.ae/abcdef99"          // Tarot –  ex.: R$ 297
+  tarot  : "https://pag.ae/7_Pwp1DCQ"          // Tarot –  ex.: R$ 297
 };
 
 document.getElementById("btn-feitio")
