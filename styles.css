@@ -1,157 +1,55 @@
-/* styles.css */
-
-/* Fundo de corpo usando imagem fornecida */
-body {
-  font-family: 'Cinzel Decorative', cursive; /* Fonte mística */
-  background: url('celestia-nuvem.png') no-repeat center center fixed;
-  background-size: cover;
-  color: #d185a2;
+body{
+  font-family:'Cinzel Decorative',cursive;
+  background:url('celestia-nuvem.png') no-repeat center/cover fixed;
+  color:#d185a2;
 }
+.brand-color{color:#FFDAB9;}
 
-/* Cor principal de marca (títulos e destaques) */
-.brand-color {
-  color: #FFDAB9; /* roxo escuro místico */
+/* Botões principais */
+.btn-vanidoya{
+  background:#a00d46;
+  border:2px solid #FFDAB9;
+  color:#FFDAB9;
+  font-weight:bold;
+  transition:.3s;
 }
-
-/* Classe auxiliar (destaques dourados pálidos) */
-.gold {
-  color: #EEE8AA;
-}
-
-/* Botões principais estilizados com nova paleta */
-.btn-vanidoya {
-  background-color: #a00d46; /* vermelho escuro */
-  border: 2px solid #FFDAB9; /* borda pêssego suave */
-  color: #FFDAB9; /* texto em pêssego suave */
-  font-weight: bold;
-  transition: all 0.3s ease;
+.btn-vanidoya:hover{
+  background:#EB2B76;
+  box-shadow:0 0 10px #a00d46;
+  color:#fff;
 }
 .btn-service{
-  width: min(90vw, 340px);   /* nunca encosta na borda vertical */
-  padding: .85rem 1.25rem;   /* altura generosa */
-  font-size: 1.15rem;        /* legível em mobile */
-}
-.btn-vanidoya:hover {
-  background-color: #EB2B76; /* rosa vibrante no hover */
-  box-shadow: 0 0 10px #a00d46;
+  width:min(90vw,340px);
+  padding:.85rem 1.25rem;
+  font-size:1.15rem;
 }
 
-.glass-wrapper, .container.glass {
-  background: rgba(255, 255, 255, 0.12);  /* branco translúcido */
-  border-radius: 20px;
-  backdrop-filter: blur(8px) saturate(160%);
-  padding: 3rem 2rem;
-  box-shadow: 0 0 12px rgba(0,0,0,.5);
+/* Vidro */
+.glass{
+  background:rgba(255,255,255,.12);
+  border-radius:20px;
+  backdrop-filter:blur(8px) saturate(160%);
+  box-shadow:0 0 12px rgba(0,0,0,.4);
 }
 
+/* Footer */
+.site-footer{
+  position:fixed;left:0;bottom:20px;width:100%;text-align:center;z-index:1000;background:transparent;pointer-events:none;
+}
+.footer-inner{
+  display:flex;justify-content:center;gap:1.4rem;pointer-events:auto;
+}
+.icon-btn{
+  width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  background:rgba(255,255,255,.18);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,.25);
+  text-decoration:none;color:#FFDAB9;transition:transform .25s,background .25s;
+}
+.icon-btn i{font-size:1.6rem;line-height:1;}
+.icon-btn:hover{transform:scale(1.15);background:rgba(255,255,255,.3);color:#fff;}
+.site-footer a{text-decoration:none!important}
 
-/* Ícones sociais em cor pêssego suave */
-.icon-btn {
-  color: #FFDAB9;
-  transition: transform 0.3s;
-}
-.icon-btn:hover {
-  transform: scale(1.2);
-}
+/* Espaço para não cobrir conteúdo */
+main{padding-bottom:140px;}
 
-/* Manter estilos de modais e placeholders (sem mudança relevante) */
-.modal-header, .modal-footer {
-  border: none;
-}
-textarea::placeholder {
-  color: #aaa;
-}
-.position-absolute img {
-  width: 24px;
-  height: 18px;
-  margin-left: 6px;
-}
-.site-footer {
-  position: fixed;
-  left: 0;
-  bottom: 20px;   /* fica 20 px acima da base */
-  width: 100%;
-  color: #EEE8AA;
-  text-align: center;
-  padding: 0.5rem 0;
-  z-index: 100;
-  background: rgba(255, 255, 255, 0.12);  /* branco translúcido */
-  border-radius: 20px;
-  backdrop-filter: blur(8px) saturate(160%);
-  box-shadow: 0 0 12px rgba(0,0,0,.5);
-}
-
-/* Evita que o conteúdo fique escondido atrás do footer */
-main { padding-bottom: 80px; }  /* altura do footer + folga */
-/* --- ajuste definitivo do SHORT vertical --- */
-/* ----------  SHORT do YouTube em formato vertical  ---------- */
-/* Cole este bloco no FINAL do styles.css e APAGUE qualquer     */
-/* definição anterior de .embed-9x16 ou .embed-9x16 iframe      */
-
-.embed-9x16{
-  position:relative;
-  width:100%;
-  aspect-ratio:9/16;          /* mantém 9 × 16 nos navegadores modernos */
-  overflow:hidden;            /* corta tudo o que “vazar”                */
-}
-
-/* fallback para navegadores sem aspect-ratio */
-@supports not (aspect-ratio: 1){
-  .embed-9x16{padding-top:177.78%;}
-}
-
-.embed-9x16 iframe{
-  position:absolute;
-  top:0;
-  left:50%;
-  height:100%;                /* preenche toda a altura                  */
-  width:178%;                 /* 16/9 = 1,78 → cobre as laterais         */
-  transform:translateX(-50%); /* centraliza e corta as barras laterais   */
-  border:0;
-}
-
-/* Limita o tamanho apenas em telas grandes (≥ 992 px) */
-@media (min-width:992px){
-  .embed-9x16{
-    max-width:360px;          /* ajuste conforme seu layout */
-    margin-inline:auto;       /* centraliza no desktop      */
-  }
-}
-/* Moldura elegante para o vídeo vertical */
-.embed-9x16 {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 9 / 16;
-  overflow: hidden;
-  border-radius: 1rem;                /* bordas arredondadas */
-  border: 1px solid rgba(255, 255, 255, 0.2); /* borda sutil */
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1); /* brilho suave */
-  backdrop-filter: blur(2px);         /* leve efeito de vidro (opcional) */
-  background: rgba(255, 255, 255, 0.05); /* fundo translúcido (fallback) */
-}
-
-/* Fallback para navegadores sem suporte a aspect-ratio */
-@supports not (aspect-ratio: 1) {
-  .embed-9x16 {
-    padding-top: 177.78%;
-  }
-}
-
-.embed-9x16 iframe {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  height: 100%;
-  width: 178%;                         /* cobre toda a largura */
-  transform: translateX(-50%);
-  border: 0;
-  border-radius: 1rem;                /* arredonda o próprio iframe também */
-}
-
-/* Limite no desktop */
-@media (min-width: 992px) {
-  .embed-9x16 {
-    max-width: 360px;
-    margin-inline: auto;
-  }
-}
+/* Modal vidro */
+.modal-content.glass{background:rgba(0,0,0,.65);color:#FFDAB9;border-radius:20px;border:1px solid rgba(255,255,255,.2);box-shadow:0 0 12px rgba(0,0,0,.4);}
