@@ -39,10 +39,12 @@
 <body>
 
   <!-- Botão “</>” para contato rápido -->
-  <a href="https://wa.me/5521970059636"
-     class="code-contact-btn"
-     target="_blank"
-     title="gostou do site? fale comigo">&lt;/&gt;</a>
+<!-- Botão “</>” para contato rápido -->
+<a href="https://wa.me/5521970059636?text=Gostei%20do%20site%20da%20Vani.%20Vamos%20conversar%3F"
+   class="code-contact-btn"
+   target="_blank"
+   title="Gostou do site? Fale comigo">&lt;/&gt;</a>
+
 
   <main class="container-fluid">
     <div class="container text-center py-3">
@@ -80,7 +82,40 @@
   </footer>
 
   <!-- ---- MODAIS (sem alterações) ---- -->
-  <!-- ... mesmos modais Share / Forest / Payment já existentes ... -->
+  <!-- FOREST MEDICINE MODAL -->
+  <div class="modal fade" id="forestModal" tabindex="-1" aria-labelledby="forestModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content glass p-3 text-center">
+        <div class="modal-header border-0">
+          <h5 class="modal-title" id="forestModalLabel">Medicinas da Floresta</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Estas medicinas são presentes ancestrais. Descubra se é seu momento de recebê‑las:</p>
+          <a href="https://docs.google.com/forms/d/1IMb6Evq2V_CrWg7wYpMwIPyAmJsnxgjtya1p9sT1x4w"
+             target="_blank" class="btn btn-vanidoya">Responder Formulário</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAYMENT MODAL -->
+  <div class="modal fade" id="paymentModal" tabindex="-1" aria-labelledby="paymentModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content glass p-3 text-center">
+        <div class="modal-header border-0">
+          <h5 class="modal-title" id="paymentModalLabel">Contribua com a missão</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img src="pix-qrcode.webp" alt="PIX QR" class="img-fluid rounded mb-2" style="max-width:220px;" loading="lazy">
+          <button id="pix-copy" class="btn btn-vanidoya mb-3" type="button">Copiar chave PIX</button>
+          <img src="lb-qrcode.webp" alt="Lightning QR" class="img-fluid rounded mb-2" style="max-width:220px;" loading="lazy">
+          <button id="lightning-copy" class="btn btn-vanidoya" type="button">Copiar Lightning</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
