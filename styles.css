@@ -94,7 +94,7 @@ main{padding-bottom:140px;}
   border-radius:8px;
   text-decoration:none;
   z-index:1100;
-  transition:transform .25s,background .25s;
+  transition:transform .25s; background: .25s;
 }
 .code-contact-btn:hover{
   transform:scale(1.1);
@@ -155,11 +155,11 @@ main{padding-bottom:140px;}
 /* responsivo */
 @media (max-width:640px){
   .btn-whats-pro{padding:10px 20px; gap:10px;}
-  .btn-whats-pro__logo{height:40px;}
+  .btn-whats-pro__logo{height:110px;}
 }
 @media (max-width:420px){
   .btn-whats-pro{padding:8px 16px; gap:8px;}
-  .btn-whats-pro__logo{height:34px;}
+  .btn-whats-pro__logo{height:90px;}
   .btn-whats-pro__text{font-size:1rem;}
 }
 /* Centraliza horizontalmente */
