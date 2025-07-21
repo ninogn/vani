@@ -6,7 +6,11 @@
   --escuro:#0b0a0d;
 }
 
-*{box-sizing:border-box;scroll-behavior:smooth;}
+*,*::before,*::after{box-sizing:border-box;}
+
+html{scroll-behavior:smooth;}
+
+
 
 body{
   margin:0;
