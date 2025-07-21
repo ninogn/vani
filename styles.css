@@ -65,7 +65,15 @@ body{
 }
 
 /* ---------- CARDS ---------- */
-.card{border:none;overflow:hidden;border-radius:1rem;box-shadow:0 8px 20px rgba(0,0,0,.06);}
+.card{
+  border:none;
+  overflow:hidden;
+  border-radius:1rem;
+  box-shadow:0 8px 20px rgba(0,0,0,.06);
+
+  /* --- NOVO: garante texto claro em qualquer tela --- */
+  color:#ffffff;                    /* tudo dentro do card vira branco */
+}
 .card img{height:220px;object-fit:cover;}
 .card-title{font-family:'Cinzel Decorative',serif;color:var(--dourado);font-size:1.35rem;margin-bottom:.6rem;}
 .card-text{color:#f7f3ff;}
