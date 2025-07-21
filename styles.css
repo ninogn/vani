@@ -101,3 +101,64 @@ main{padding-bottom:140px;}
   background:rgba(255,255,255,.3);
   color:#fff;
 }
+/* BOTÃO WHATSAPP – 3D + Glass + detalhe rosa */
+.btn-whats-pro{
+  /* estrutura */
+  display:inline-flex;
+  align-items:center;
+  gap:12px;
+  padding:12px 26px;
+  max-width:100%;
+  overflow:hidden;
+  border-radius:50px;
+  border:2px solid rgba(255,130,145,.55);   /* contorno ROSA semigradiente */
+
+  /* fundo “vidro” sobre gradiente verde */
+  background:linear-gradient(135deg,#34e389 0%,#25d366 50%,#1ea654 100%);
+  background-clip:padding-box;              /* mantém contorno rosa visível */
+  backdrop-filter:blur(6px) saturate(1.1);  /* efeito glassmorphism */
+
+  /* sombras p/ profundidade + glow rosa suave */
+  box-shadow:
+    0 6px 16px rgba(0,0,0,.25),             /* sombra externa */
+    inset 0 2px 4px rgba(255,255,255,.45),  /* brilho interno topo */
+    0 0 8px 2px rgba(255,130,145,.35);      /* halo ROSA */
+  
+  color:#fff;
+  text-decoration:none;
+  transition:transform .18s ease, box-shadow .18s ease;
+}
+.btn-whats-pro:hover{
+  transform:translateY(-3px);
+  box-shadow:
+    0 8px 20px rgba(0,0,0,.30),
+    inset 0 2px 5px rgba(255,255,255,.50),
+    0 0 10px 3px rgba(255,130,145,.45);
+}
+
+/* logo */
+.btn-whats-pro__logo{
+  height:90px;          /* ajuste se desejar 40‑64 px */
+  width:auto;
+  flex-shrink:0;
+  filter:drop-shadow(0 2px 3px rgba(0,0,0,.30));
+}
+
+/* texto */
+.btn-whats-pro__text{
+  font-size:1.15rem;
+  font-weight:700;
+  white-space:nowrap;
+  text-shadow:0 1px 2px rgba(0,0,0,.25);
+}
+
+/* responsivo */
+@media (max-width:640px){
+  .btn-whats-pro{padding:10px 20px; gap:10px;}
+  .btn-whats-pro__logo{height:40px;}
+}
+@media (max-width:420px){
+  .btn-whats-pro{padding:8px 16px; gap:8px;}
+  .btn-whats-pro__logo{height:34px;}
+  .btn-whats-pro__text{font-size:1rem;}
+}
