@@ -7,27 +7,27 @@ const SITE_URL        = "https://prontosocorroespiritual.com";
 const copy = (txt) => navigator.clipboard.writeText(txt).then(()=>alert("Copiado!"));
 
 function shareSite(){
-  if(navigator.share){
+  if (navigator.share){
     navigator.share({title:"Vani D'Oyá – Conexão Espiritual", url:SITE_URL});
-  }else{
+  } else {
     bootstrap.Modal.getOrCreateInstance(document.getElementById("shareModal")).show();
   }
 }
 
 /* Espera DOM */
 document.addEventListener("DOMContentLoaded", () => {
-  document.getElementById("share-btn")?.addEventListener("click", shareSite);
+  /* Compartilhar */
+  document.getElementById("share-btn") ?.addEventListener("click", shareSite);
   document.getElementById("share-copy")?.addEventListener("click", () => copy(SITE_URL));
 
-  document.getElementById("pix-copy")?.addEventListener("click", () => copy(PIX_CODE));
+  /* PIX / Lightning */
+  document.getElementById("pix-copy")     ?.addEventListener("click", () => copy(PIX_CODE));
   document.getElementById("lightning-copy")?.addEventListener("click", () => copy(LIGHTNING_CODE));
 
-  /* Adiciona cache-buster a todos os links SimplyBook */
-  document.querySelectorAll('a[href*="simplybook.me"]').forEach(link=>{
-      link.addEventListener("click", e=>{
-        if(!link.href.includes("?t=")){
-          link.href = link.href + (link.href.includes('?')?'&':'?') + 't=' + Date.now();
-        }
-      });
+  /* SimplyBook cache‑buster */
+  const book = document.querySelector('a[href^="https://pset.simplybook.me"]');
+  book?.addEventListener("click", e => {
+    e.preventDefault();
+    window.location.href = book.href + "?t=" + Date.now();
   });
 });

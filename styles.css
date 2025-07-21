@@ -1,3 +1,4 @@
+/* ---------- VARIÁVEIS ---------- */
 :root{
   --rosa:#ff8291;
   --violeta:#764ba2;
@@ -11,76 +12,161 @@ body{
   margin:0;
   background:url('celestia-nuvem.webp') center/cover fixed no-repeat;
   font-family:'Inter',sans-serif;
-  color:#eae6f0;
+  color:#dcd9e0;
 }
 
-/* Glass */
+/* ---------- ELEMENTOS MARCA ---------- */
+.brand-color{color:var(--dourado);font-family:'Cinzel Decorative',serif;}
+.subtitle{font-size:1rem;color:#eae6f0;}
+.portrait{width:180px;height:180px;border-radius:50%;border:4px solid var(--dourado);box-shadow:0 4px 12px rgba(0,0,0,.4);}
+
+/* ---------- GLASS ---------- */
 .glass{
-  background:rgba(0,0,0,.55);
-  backdrop-filter:blur(14px) saturate(160%);
-  border:1px solid rgba(255,255,255,.15);
-  border-radius:1.25rem;
+  background:rgba(0,0,0,.45);
+  backdrop-filter:blur(14px) saturate(140%);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:1.5rem;
   box-shadow:0 8px 24px rgba(0,0,0,.35);
 }
 
-/* Branding */
-.brand-color{color:var(--dourado);font-family:'Cinzel Decorative',serif;}
-.subtitle{font-size:1rem;color:#fff;}
-.portrait{width:180px;height:180px;object-fit:cover;border-radius:50%;border:4px solid var(--dourado);box-shadow:0 4px 12px rgba(0,0,0,.4);}
-.hero-card{max-width:420px;}
-
-/* Buttons */
+/* ---------- LINKTREE BUTTONS ---------- */
 .btn-vanidoya{
-  background:linear-gradient(135deg,var(--violeta),var(--rosa));
-  font-weight:700;
-  color:#fff;
-  border:2px solid rgba(255,255,255,.35);
+  background:var(--violeta);
+  border:2px solid var(--dourado);
+  color:var(--dourado);
+  font-weight:600;
+  width:100%;
+  padding:.85rem 1.25rem;
+  transition:background .2s,transform .22s;
+}
+.btn-vanidoya:hover{background:#8c5bc0;color:#fff;transform:translateY(-3px);}
+.btn-service{width:100%;}
+
+/* Grid para 4 botões em telas maiores */
+.btn-grid{display:grid;gap:1rem;}
+@media (min-width:576px){.btn-grid{grid-template-columns:repeat(2,1fr);}}
+/* botão compacto e centralizado */
+.btn-inline{
+  width:auto !important;   /* derruba o width:100% */
+  display:inline-block;    /* deixa só do tamanho do conteúdo */
+}
+
+
+/* ---------- SECTIONS & TITLES ---------- */
+.section{padding:4.5rem 0;}
+.section-title{
+  font-family:'Cinzel Decorative',serif;
+  font-size:2.6rem;          /* maior */
+  font-weight:700;           /* mais espesso */
+  color:var(--dourado);
+  text-shadow:0 2px 6px rgba(0,0,0,.6);  /* contraste */
+  text-align:center;
+  margin-bottom:2.5rem;
+}
+
+/* ---------- CARDS ---------- */
+.card{
+  border:none;
+  overflow:hidden;
+  border-radius:1rem;
+  box-shadow:0 8px 20px rgba(0,0,0,.06);
+
+  /* --- NOVO: garante texto claro em qualquer tela --- */
+  color:#ffffff;                    /* tudo dentro do card vira branco */
+}
+.card img{height:220px;object-fit:cover;}
+.card-title{font-family:'Cinzel Decorative',serif;color:var(--dourado);font-size:1.35rem;margin-bottom:.6rem;}
+.card-text{color:#f7f3ff;}
+.btn-outline-light{color:#fff;border-color:#fff;}
+.btn-outline-light:hover{background:#fff;color:var(--escuro);}
+
+/* ---------- FOOTER ---------- */
+.site-footer{position:fixed;left:0;bottom:20px;width:100%;text-align:center;pointer-events:none;}
+.footer-inner{display:flex;justify-content:center;gap:1.4rem;pointer-events:auto;}
+.icon-btn{
+  width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  background:rgba(255,255,255,.18);backdrop-filter:blur(4px);
+  border:1px solid rgba(255,255,255,.25);color:var(--dourado);
+  transition:background .25s,transform .25s;text-decoration:none;
+}
+.icon-btn:hover{background:rgba(255,255,255,.3);transform:scale(1.12);color:#fff;}
+
+/* Espaço para o footer não cobrir conteúdo */
+main{padding-bottom:140px;}
+
+/* ---------- MODAIS ---------- */
+.modal-content.glass{
+  background:rgba(0,0,0,.75);
+  color:var(--dourado);
+  border-radius:20px;
+  border:1px solid rgba(255,255,255,.15);
+}
+
+/* ---------- BOTÃO “</>” DEV ---------- */
+.code-contact-btn{
+  position:fixed;top:20px;right:20px;z-index:1100;
+  background:rgba(255,255,255,.18);backdrop-filter:blur(4px);
+  border:1px solid rgba(255,255,255,.3);color:var(--dourado);
+  font-family:'Cinzel Decorative',serif;font-size:1rem;padding:4px 10px 2px;border-radius:8px;
+  text-decoration:none;transition:background .25s,transform .25s;
+}
+.code-contact-btn:hover{background:rgba(255,255,255,.3);transform:scale(1.1);color:#fff;}
+/* ===== MELHORIAS PARA MOBILE ===== */
+@media (max-width:575.98px){
+
+  /* vidro mais escuro → aumenta contraste com texto claro */
+  .glass{
+    background:rgba(0,0,0,.70);  /* antes .45 */
+  }
+
+  /* textos claros (subtítulo, parágrafos dos cards) */
+  .subtitle{font-size:1.05rem;color:#ffffff;}
+  .card-text{color:#ffffff;}
+
+  /* títulos menores, mas ainda destacados */
+  .section-title{font-size:2.1rem;}
+
+  /* botões 3D – fonte um pouco maior e padding melhor para dedo */
+  .btn-vanidoya{
+    font-size:1.05rem;
+    padding:.9rem 1.4rem;
+  }
+
+  /* botão flutuante – tamanho e sombra extra */
+  .floating-highlight{
+    padding:12px 24px;
+    box-shadow:
+      inset 0 2px 4px rgba(255,255,255,.25),
+      0 10px 28px rgba(0,0,0,.55);
+  }
+}
+
+/* --- HERO & MAIN BUTTONS (moved from inline) --- */
+.portrait{width:180px;height:180px;object-fit:cover;border-radius:50%;border:4px solid var(--dourado);box-shadow:0 4px 12px rgba(0,0,0,.4);}
+.hero-card{background:rgba(118,75,162,.28);backdrop-filter:blur(14px) saturate(160%);border:1px solid rgba(255,255,255,.17);border-radius:1rem;max-width:420px;}
+.btn-vanidoya{
+  background:linear-gradient(135deg,var(--violeta) 0%,var(--rosa) 100%);
+  font-size:1.1rem;font-weight:700;color:#fff;
+  border:2px solid rgba(255,255,255,.36);
   border-radius:52px;
   box-shadow:inset 0 2px 4px rgba(255,255,255,.25),0 6px 14px rgba(0,0,0,.35);
   transition:transform .25s, box-shadow .25s;
 }
-.btn-vanidoya:hover{transform:translateY(-4px);box-shadow:inset 0 2px 4px rgba(255,255,255,.25),0 10px 20px rgba(0,0,0,.45);}
+.btn-vanidoya:hover{transform:translateY(-3px);box-shadow:inset 0 2px 4px rgba(255,255,255,.25),0 10px 20px rgba(0,0,0,.45);}
 
-.btn-service{width:100%;}
-.btn-inline{width:auto !important;}
-
-/* Sections */
-.section{padding:4rem 0;}
-.section-title{font-family:'Cinzel Decorative',serif;color:var(--dourado);font-size:2.4rem;text-align:center;margin-bottom:2.5rem;}
-
-/* Card */
-.card{border:none;overflow:hidden;border-radius:1rem;box-shadow:0 8px 20px rgba(0,0,0,.08);color:#fff;}
-.card img{width:100%;height:220px;object-fit:cover;}
-.card-title{font-family:'Cinzel Decorative',serif;color:var(--dourado);font-size:1.35rem;margin-bottom:.6rem;}
-.card-text{color:#fff;}
-.btn-outline-light{color:#fff;border-color:#fff;}
-.btn-outline-light:hover{background:#fff;color:var(--escuro);}
-
-/* crop utilities */
-.crop-mid{object-position:center 50%;}
-.crop-bot{object-position:center 90%;}
-
-/* Footer */
-.site-footer{position:fixed;left:0;bottom:20px;width:100%;text-align:center;pointer-events:none;}
-.footer-inner{display:flex;justify-content:center;gap:1.2rem;pointer-events:auto;}
-.icon-btn{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.18);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,.25);color:var(--dourado);transition:transform .25s,background .25s;text-decoration:none;}
-.icon-btn:hover{transform:scale(1.12);background:rgba(255,255,255,.3);color:#fff;}
-main{padding-bottom:140px;}
-
-/* Floating highlight */
-.floating-highlight{position:fixed;bottom:95px;right:24px;padding:14px 28px;border-radius:46px;background:linear-gradient(135deg,var(--rosa),var(--violeta));color:#fff;font-weight:700;border:2px solid rgba(255,255,255,.38);box-shadow:inset 0 2px 4px rgba(255,255,255,.25),0 8px 24px rgba(0,0,0,.45);z-index:1080;transition:transform .25s;}
-.floating-highlight:hover{transform:translateY(-6px);}
-
-/* Modals */
-.modal-content.glass{background:rgba(0,0,0,.8);color:var(--dourado);}
-
-/* Code contact */
-.code-contact-btn{position:fixed;top:20px;right:20px;background:rgba(255,255,255,.18);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,.3);color:var(--dourado);font-family:'Cinzel Decorative',serif;padding:4px 10px 2px;border-radius:8px;text-decoration:none;z-index:1100;transition:transform .25s,background .25s;}
-.code-contact-btn:hover{background:rgba(255,255,255,.3);transform:scale(1.1);color:#fff;}
-
-/* Mobile tweaks */
-@media (max-width:575.98px){
-  .glass{background:rgba(0,0,0,.75);}
-  .section-title{font-size:2.1rem;}
-  .btn-vanidoya{font-size:1rem;}
+/* card CTA variant */
+.card .btn-vanidoya{
+  background:transparent;
+  color:#fff;
+  border:2px solid #fff;
 }
+.card .btn-vanidoya:hover{background:#fff;color:var(--escuro);}
+
+/* --- floating highlight --- */
+.floating-highlight{position:fixed;bottom:95px;right:24px;padding:14px 28px;border-radius:46px;background:linear-gradient(135deg,#f9d976,#f39c12);color:#fff;font-weight:700;text-decoration:none;border:2px solid rgba(255,255,255,.38);box-shadow:inset 0 2px 4px rgba(255,255,255,.25),0 8px 24px rgba(0,0,0,.45);z-index:1080;transition:transform .25s, box-shadow .25s;}
+.floating-highlight:hover{transform:translateY(-6px);box-shadow:inset 0 2px 4px rgba(255,255,255,.25),0 12px 32px rgba(0,0,0,.55);}
+
+/* grid responsive fix */
+.btn-grid{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));justify-content:center;}
+.btn-service{width:100%;}
+@media (max-width:575.98px){.btn-service{width:auto;}}
