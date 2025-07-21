@@ -1,169 +1,105 @@
+/* ---------- VARIÁVEIS ---------- */
+:root{
+  --rosa:#ff8291;
+  --violeta:#764ba2;
+  --dourado:#FFDAB9;
+  --escuro:#0b0a0d;
+}
+
+*{box-sizing:border-box;scroll-behavior:smooth;}
+
 body{
-  font-family:'Cinzel Decorative',cursive;
-  background:url('celestia-nuvem.webp') no-repeat center/cover fixed;
-  color:#d185a2;
-}
-.brand-color{color:#FFDAB9;}
-
-/* Botões principais */
-.btn-vanidoya{
-  background:#a00d46;
-  border:2px solid #FFDAB9;
-  color:#FFDAB9;
-  font-weight:bold;
-  transition:.3s;
-}
-.btn-vanidoya:hover{
-  background:#EB2B76;
-  box-shadow:0 0 10px #a00d46;
-  color:#fff;
-}
-.btn-service{
-  width:min(90vw,340px);
-  padding:.85rem 1.25rem;
-  font-size:1.15rem;
+  margin:0;
+  background:url('celestia-nuvem.webp') center/cover fixed no-repeat;
+  font-family:'Inter',sans-serif;
+  color:#dcd9e0;
 }
 
-/* Vidro */
+/* ---------- ELEMENTOS MARCA ---------- */
+.brand-color{color:var(--dourado);font-family:'Cinzel Decorative',serif;}
+.subtitle{font-size:1rem;color:#eae6f0;}
+.portrait{width:180px;height:180px;border-radius:50%;border:4px solid var(--dourado);box-shadow:0 4px 12px rgba(0,0,0,.4);}
+
+/* ---------- GLASS ---------- */
 .glass{
-  background:rgba(255,255,255,.12);
-  border-radius:20px;
-  backdrop-filter:blur(8px) saturate(160%);
-  box-shadow:0 0 12px rgba(0,0,0,.4);
+  background:rgba(0,0,0,.45);
+  backdrop-filter:blur(14px) saturate(140%);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:1.5rem;
+  box-shadow:0 8px 24px rgba(0,0,0,.35);
 }
 
-/* ---- GRID RESPONSIVO DOS BOTÕES ---- */
-.btn-grid{
-  display:grid;
-  gap:1rem;
+/* ---------- LINKTREE BUTTONS ---------- */
+.btn-vanidoya{
+  background:var(--violeta);
+  border:2px solid var(--dourado);
+  color:var(--dourado);
+  font-weight:600;
+  width:100%;
+  padding:.85rem 1.25rem;
+  transition:background .2s,transform .22s;
 }
-@media (min-width:576px){       /* 2 colunas */
-  .btn-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-}
-@media (min-width:992px){       /* 3 colunas */
-  .btn-grid{
-    grid-template-columns:repeat(3,1fr);
-  }
-}
-.btn-grid .btn-service{
-  width:100%!important;          /* cada botão ocupa a célula inteira */
+.btn-vanidoya:hover{background:#8c5bc0;color:#fff;transform:translateY(-3px);}
+.btn-service{width:100%;}
+
+/* Grid para 4 botões em telas maiores */
+.btn-grid{display:grid;gap:1rem;}
+@media (min-width:576px){.btn-grid{grid-template-columns:repeat(2,1fr);}}
+/* botão compacto e centralizado */
+.btn-inline{
+  width:auto !important;   /* derruba o width:100% */
+  display:inline-block;    /* deixa só do tamanho do conteúdo */
 }
 
-/* Footer */
-.site-footer{
-  position:fixed;left:0;bottom:20px;width:100%;text-align:center;z-index:1000;background:transparent;pointer-events:none;
+
+/* ---------- SECTIONS & TITLES ---------- */
+.section{padding:4.5rem 0;}
+.section-title{
+  font-family:'Cinzel Decorative',serif;
+  font-size:2.6rem;          /* maior */
+  font-weight:700;           /* mais espesso */
+  color:var(--dourado);
+  text-shadow:0 2px 6px rgba(0,0,0,.6);  /* contraste */
+  text-align:center;
+  margin-bottom:2.5rem;
 }
-.footer-inner{
-  display:flex;justify-content:center;gap:1.4rem;pointer-events:auto;
-}
+
+/* ---------- CARDS ---------- */
+.card{border:none;overflow:hidden;border-radius:1rem;box-shadow:0 8px 20px rgba(0,0,0,.06);}
+.card img{height:220px;object-fit:cover;}
+.card-title{font-family:'Cinzel Decorative',serif;color:var(--dourado);font-size:1.35rem;margin-bottom:.6rem;}
+.card-text{color:#f7f3ff;}
+.btn-outline-light{color:#fff;border-color:#fff;}
+.btn-outline-light:hover{background:#fff;color:var(--escuro);}
+
+/* ---------- FOOTER ---------- */
+.site-footer{position:fixed;left:0;bottom:20px;width:100%;text-align:center;pointer-events:none;}
+.footer-inner{display:flex;justify-content:center;gap:1.4rem;pointer-events:auto;}
 .icon-btn{
   width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;
-  background:rgba(255,255,255,.18);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,.25);
-  text-decoration:none;color:#FFDAB9;transition:transform .25s,background .25s;
+  background:rgba(255,255,255,.18);backdrop-filter:blur(4px);
+  border:1px solid rgba(255,255,255,.25);color:var(--dourado);
+  transition:background .25s,transform .25s;text-decoration:none;
 }
-.icon-btn i{font-size:1.6rem;line-height:1;}
-.icon-btn:hover{transform:scale(1.15);background:rgba(255,255,255,.3);color:#fff;}
-.site-footer a{text-decoration:none!important}
+.icon-btn:hover{background:rgba(255,255,255,.3);transform:scale(1.12);color:#fff;}
 
-/* Espaço para não cobrir conteúdo */
+/* Espaço para o footer não cobrir conteúdo */
 main{padding-bottom:140px;}
 
-/* Modal vidro */
+/* ---------- MODAIS ---------- */
 .modal-content.glass{
-  background:rgba(0,0,0,.65);
-  color:#FFDAB9;
+  background:rgba(0,0,0,.75);
+  color:var(--dourado);
   border-radius:20px;
-  border:1px solid rgba(255,255,255,.2);
-  box-shadow:0 0 12px rgba(0,0,0,.4);
+  border:1px solid rgba(255,255,255,.15);
 }
 
-/* ---- Botão “</>” de contato ---- */
+/* ---------- BOTÃO “</>” DEV ---------- */
 .code-contact-btn{
-  position:fixed;
-  top:20px;
-  right:20px;
-  background:rgba(255,255,255,.18);
-  backdrop-filter:blur(4px);
-  border:1px solid rgba(255,255,255,.3);
-  color:#FFDAB9;
-  font-family:'Cinzel Decorative',cursive;
-  font-size:1rem;
-  padding:4px 10px 2px;
-  border-radius:8px;
-  text-decoration:none;
-  z-index:1100;
-  transition:transform .25s; background: .25s;
+  position:fixed;top:20px;right:20px;z-index:1100;
+  background:rgba(255,255,255,.18);backdrop-filter:blur(4px);
+  border:1px solid rgba(255,255,255,.3);color:var(--dourado);
+  font-family:'Cinzel Decorative',serif;font-size:1rem;padding:4px 10px 2px;border-radius:8px;
+  text-decoration:none;transition:background .25s,transform .25s;
 }
-.code-contact-btn:hover{
-  transform:scale(1.1);
-  background:rgba(255,255,255,.3);
-  color:#fff;
-}
-/* BOTÃO WHATSAPP – 3D + Glass + detalhe rosa */
-.btn-whats-pro{
-  /* estrutura */
-  display:inline-flex;
-  align-items:center;
-  gap:12px;
-  padding:12px 26px;
-  max-width:100%;
-  overflow:hidden;
-  border-radius:50px;
-  border:2px solid rgba(255,130,145,.55);   /* contorno ROSA semigradiente */
-
-  /* fundo “vidro” sobre gradiente verde */
-  background:linear-gradient(135deg,#34e389 0%,#25d366 50%,#1ea654 100%);
-  background-clip:padding-box;              /* mantém contorno rosa visível */
-  backdrop-filter:blur(6px) saturate(1.1);  /* efeito glassmorphism */
-
-  /* sombras p/ profundidade + glow rosa suave */
-  box-shadow:
-    0 6px 16px rgba(0,0,0,.25),             /* sombra externa */
-    inset 0 2px 4px rgba(255,255,255,.45),  /* brilho interno topo */
-    0 0 8px 2px rgba(255,130,145,.35);      /* halo ROSA */
-  
-  color:#fff;
-  text-decoration:none;
-  transition:transform .18s ease, box-shadow .18s ease;
-}
-.btn-whats-pro:hover{
-  transform:translateY(-3px);
-  box-shadow:
-    0 8px 20px rgba(0,0,0,.30),
-    inset 0 2px 5px rgba(255,255,255,.50),
-    0 0 10px 3px rgba(255,130,145,.45);
-}
-
-/* logo */
-.btn-whats-pro__logo{
-  height:110px;          /* ajuste se desejar 40‑64 px */
-  width:auto;
-  flex-shrink:0;
-  filter:drop-shadow(0 2px 3px rgba(0,0,0,.30));
-}
-
-/* texto */
-.btn-whats-pro__text{
-  font-size:1.15rem;
-  font-weight:700;
-  white-space:nowrap;
-  text-shadow:0 1px 2px rgba(0,0,0,.25);
-}
-
-/* responsivo */
-@media (max-width:640px){
-  .btn-whats-pro{padding:10px 20px; gap:10px;}
-  .btn-whats-pro__logo{height:110px;}
-}
-@media (max-width:420px){
-  .btn-whats-pro{padding:8px 16px; gap:8px;}
-  .btn-whats-pro__logo{height:90px;}
-  .btn-whats-pro__text{font-size:1rem;}
-}
-/* Centraliza horizontalmente */
-.btn-center{
-  display:flex;
-  justify-content:center;
-}
+.code-contact-btn:hover{background:rgba(255,255,255,.3);transform:scale(1.1);color:#fff;}
