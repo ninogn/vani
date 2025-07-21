@@ -138,7 +138,7 @@ main{padding-bottom:140px;}
 
 /* logo */
 .btn-whats-pro__logo{
-  height:90px;          /* ajuste se desejar 40‑64 px */
+  height:110px;          /* ajuste se desejar 40‑64 px */
   width:auto;
   flex-shrink:0;
   filter:drop-shadow(0 2px 3px rgba(0,0,0,.30));
@@ -161,4 +161,9 @@ main{padding-bottom:140px;}
   .btn-whats-pro{padding:8px 16px; gap:8px;}
   .btn-whats-pro__logo{height:34px;}
   .btn-whats-pro__text{font-size:1rem;}
+}
+/* Centraliza horizontalmente */
+.btn-center{
+  display:flex;
+  justify-content:center;
 }
