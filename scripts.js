@@ -1,3 +1,10 @@
+if ('scrollRestoration' in history){
+  history.scrollRestoration = 'manual';   // 1) desliga restauração automática
+}
+
+window.addEventListener('pageshow', () => {  // 2) toda vez que a página aparecer
+  window.scrollTo(0, 0);                     //    volta para o topo
+});
 /* Repositório de códigos e links */
 const PIX_CODE        = "00020101021126330014br.gov.bcb.pix0111126445857675204000053039865802BR5919Vanise Pinto Telles6014Rio De Janeiro62070503***630431D6";
 const LIGHTNING_CODE  = "lnurl1dp68gurn8ghj7ampd3kx2ar0veekzar0wd5xjtnrdakj7tnhv4kxctttdehhwm30d3h82unvwqhkwct40fukgmm4vfkx2wps564ys2";
