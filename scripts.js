@@ -20,6 +20,8 @@ if ('scrollRestoration' in history){ history.scrollRestoration = 'manual'; }
 window.scrollTo(0,0);
 
 document.addEventListener("DOMContentLoaded", () => {
+  window.scrollTo(0,0);
+  document.documentElement.style.scrollBehavior = 'smooth';
   /* Compartilhar */
   document.getElementById("share-btn") ?.addEventListener("click", shareSite);
   document.getElementById("share-copy")?.addEventListener("click", () => copy(SITE_URL));

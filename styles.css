@@ -6,9 +6,10 @@
   --escuro:#0b0a0d;
 }
 
+
 *,*::before,*::after{box-sizing:border-box;}
 
-html{scroll-behavior:smooth;}
+html{scroll-behavior:auto;}
 
 
 
