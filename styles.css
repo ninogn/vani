@@ -36,16 +36,17 @@ body{
 
 /* ---------- LINKTREE BUTTONS ---------- */
 .btn-vanidoya{
-  background:var(--violeta);
-  border:2px solid var(--dourado);
-  color:var(--dourado);
-  font-weight:600;
-  width:100%;
-  padding:.85rem 1.25rem;
-  transition:background .2s,transform .22s;
+  background:#a00d46;              /* vermelho vinho */
+  border:2px solid #FFDAB9;        /* dourado‑pêssego */
+  color:#FFDAB9;
+  font-weight:bold;
+  transition:.3s;
 }
-.btn-vanidoya:hover{background:#8c5bc0;color:#fff;transform:translateY(-3px);}
-.btn-service{width:100%;}
+.btn-vanidoya:hover{
+  background:#EB2B76;              /* rosa vivo */
+  box-shadow:0 0 10px #a00d46;
+  color:#fff;
+}
 
 /* Grid para 4 botões em telas maiores */
 .btn-grid{display:grid;gap:1rem;}
@@ -149,15 +150,6 @@ main{padding-bottom:140px;}
 /* --- HERO & MAIN BUTTONS (moved from inline) --- */
 .portrait{width:180px;height:180px;object-fit:cover;border-radius:50%;border:4px solid var(--dourado);box-shadow:0 4px 12px rgba(0,0,0,.4);}
 .hero-card{background:rgba(118,75,162,.28);backdrop-filter:blur(14px) saturate(160%);border:1px solid rgba(255,255,255,.17);border-radius:1rem;max-width:420px;}
-.btn-vanidoya{
-  background:linear-gradient(135deg,var(--violeta) 0%,var(--rosa) 100%);
-  font-size:1.1rem;font-weight:700;color:#fff;
-  border:2px solid rgba(255,255,255,.36);
-  border-radius:52px;
-  box-shadow:inset 0 2px 4px rgba(255,255,255,.25),0 6px 14px rgba(0,0,0,.35);
-  transition:transform .25s, box-shadow .25s;
-}
-.btn-vanidoya:hover{transform:translateY(-3px);box-shadow:inset 0 2px 4px rgba(255,255,255,.25),0 10px 20px rgba(0,0,0,.45);}
 
 /* card CTA variant */
 .card .btn-vanidoya{
