@@ -1,4 +1,4 @@
-<!-- feitio-escola.html (widget fix) -->
+<!-- feitio-escola.html (widget fix) - atualizado em 28/07/2025 -->
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -63,23 +63,23 @@
   <!-- vídeo horizontal -->
   <div class="embed-16x9">
     <iframe
-      src="https://www.youtube.com/embed/8VnEo12d0-0?autoplay=1&mute=1&controls=1&rel=0&modestbranding=1"
+      src="https://www.youtube.com/embed/8VnEo12d0-0?controls=1&rel=0&modestbranding=1"
       title="Feitio Escola Aya Curandeira"
       allow="autoplay; encrypted-media"
       allowfullscreen></iframe>
   </div>
 
-  <!-- investimento (botão removido; widget assume o CTA) -->
+  <!-- investimento (botão de pagamento) -->
   <div class="my-4">
     <h3 class="gold mb-3">Investimento</h3>
-    <h5 class="mb-1">💳  R$ 400,00</h5>
-    <h6>Refeições inclusas</h6>
+    <h5 class="mb-3">💳 R$ 206,00</h5>
+    <a id="pay-link" href="https://pag.ae/7_PwaScM3" class="btn btn-vanidoya" target="_blank" rel="noopener noreferrer">Reservar vaga</a>
   </div>
   
   <!-- grupo WhatsApp -->
   <p class="fs-6">
     🤝 Após o pagamento, entre no nosso
-    <a href="https://chat.whatsapp.com/GHcG9PzCRl9IT1xm8gMdC9" target="_blank" class="gold fw-bold text-decoration-underline">Grupo&nbsp;de&nbsp;WhatsApp</a>
+    <a href="https://chat.whatsapp.com/GHcG9PzCRl9IT1xm8gMdC9" target="_blank" class="gold fw-bold text-decoration-underline" rel="noopener noreferrer">Grupo&nbsp;de&nbsp;WhatsApp</a>
     para receber todas as instruções.
   </p>
 
@@ -132,6 +132,19 @@
     "button_text_color":"#ffffff",
     "button_position":"right",
     "button_position_offset":"55%"});
+</script>
+
+<!-- JS extra para reforçar segurança do link de pagamento -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const payBtn = document.getElementById('pay-link');
+    if (payBtn) {
+      payBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        window.open(this.href, '_blank', 'noopener,noreferrer');
+      });
+    }
+  });
 </script>
 </body>
 </html>
